@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VOID — Beyond The Ordinary | Premium Streetwear</title>
+  <meta name="description" content="VOID — a new perspective on streetwear. Premium minimalist fashion: oversized silhouettes, essential layers, considered accessories." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- ======================= PRELOADER ======================= -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__center">
+      <div class="preloader__logo" id="preloader-logo">
+        <span>V</span><span>O</span><span>I</span><span>D</span>
+      </div>
+      <p class="preloader__tag label">A new perspective on streetwear</p>
+      <div class="preloader__bar" aria-hidden="true">
+        <div class="preloader__bar-fill" id="preloader-fill"></div>
+      </div>
+      <p class="preloader__count label" id="preloader-count">00</p>
+    </div>
+  </div>
+
+  <!-- ==================== SCROLL PROGRESS ==================== -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__fill" id="scroll-progress-fill"></div>
+  </div>
+
+  <!-- ========================= HEADER ========================= -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <button class="header__burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+
+      <nav class="header__nav" aria-label="Primary">
+        <a href="#shop" class="header__link" data-navlink>Shop</a>
+        <a href="#categories" class="header__link" data-navlink>Categories</a>
+        <a href="#editorial" class="header__link" data-navlink>Editorial</a>
+      </nav>
+
+      <a href="#top" class="header__logo" data-navlink aria-label="VOID home">VOID</a>
+
+      <div class="header__actions">
+        <button class="header__action" id="search-open" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>
+        </button>
+        <button class="header__action" id="fav-open" aria-label="Favorites">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20.5c-5.2-3.6-8.5-6.8-8.5-10.6A4.6 4.6 0 0 1 12 6.7a4.6 4.6 0 0 1 8.5 3.2c0 3.8-3.3 7-8.5 10.6Z"/></svg>
+          <span class="header__badge" id="fav-count" hidden>0</span>
+        </button>
+        <button class="header__action" id="cart-open" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8h14l-1.2 12.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8L5 8Z"/><path d="M8.5 10V6.5a3.5 3.5 0 0 1 7 0V10"/></svg>
+          <span class="header__badge" id="cart-count" hidden>0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====================== MOBILE MENU ====================== -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu__inner">
+      <nav class="mobile-menu__nav" aria-label="Mobile">
+        <a href="#shop" class="mobile-menu__link" data-navlink><span class="mobile-menu__index">01</span>Shop</a>
+        <a href="#categories" class="mobile-menu__link" data-navlink><span class="mobile-menu__index">02</span>Categories</a>
+        <a href="#editorial" class="mobile-menu__link" data-navlink><span class="mobile-menu__index">03</span>Editorial</a>
+        <a href="#philosophy" class="mobile-menu__link" data-navlink><span class="mobile-menu__index">04</span>Philosophy</a>
+      </nav>
+      <div class="mobile-menu__footer">
+        <p class="label">VOID — Beyond the ordinary</p>
+        <p class="label">Est. MMXXVI</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================= SEARCH OVERLAY ======================= -->
+  <div class="search-overlay" id="search-overlay" aria-hidden="true" role="dialog" aria-label="Search products">
+    <div class="search-overlay__top container">
+      <label class="visually-hidden" for="search-input">Search products</label>
+      <input type="search" id="search-input" class="search-overlay__input" placeholder="SEARCH THE COLLECTION" autocomplete="off" />
+      <button class="search-overlay__close" id="search-close" aria-label="Close search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l14 14M19 5 5 19"/></svg>
+      </button>
+    </div>
+    <div class="search-overlay__results container" id="search-results"></div>
+  </div>
+
+  <!-- ========================== MAIN ========================== -->
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero__media" id="hero-media">
+        <img
+          src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1800&auto=format&fit=crop"
+          alt="VOID editorial — model in black against a dark studio backdrop"
+          class="hero__img" id="hero-img" fetchpriority="high" />
+        <div class="hero__veil" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero__content container">
+        <p class="hero__season label" data-hero-fade>FW26 — Collection 004</p>
+        <h1 class="hero__title" id="hero-title">
+          <span class="split-line"><span class="split-inner">Beyond</span></span>
+          <span class="split-line"><span class="split-inner">The</span></span>
+          <span class="split-line"><span class="split-inner">Ordinary</span></span>
+        </h1>
+        <p class="hero__sub" data-hero-fade>A new perspective on streetwear</p>
+        <a href="#shop" class="btn btn--light" data-hero-fade data-navlink>
+          <span>Explore Collection</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14m0 0 6-6m-6 6-6-6"/></svg>
+        </a>
+      </div>
+
+      <div class="hero__scroll" data-hero-fade aria-hidden="true">
+        <span class="label">Scroll</span>
+        <span class="hero__scroll-line"><span></span></span>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track" id="marquee-track">
+        <span class="marquee__item">Premium Streetwear</span><span class="marquee__dot">·</span>
+        <span class="marquee__item">Minimalist Luxury</span><span class="marquee__dot">·</span>
+        <span class="marquee__item">Editorial Fashion</span><span class="marquee__dot">·</span>
+        <span class="marquee__item">VOID FW26</span><span class="marquee__dot">·</span>
+      </div>
+    </div>
+
+    <!-- CATEGORIES -->
+    <section class="categories" id="categories">
+      <div class="container">
+        <div class="section-head">
+          <p class="label" data-reveal>01 — Collections</p>
+          <h2 class="section-title" data-split>Choose your world</h2>
+        </div>
+
+        <div class="categories__grid">
+          <a href="#shop" class="category-card" data-category-link="men" data-reveal="mask">
+            <div class="category-card__media">
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1200&auto=format&fit=crop" alt="MEN — tailored dark suit editorial" loading="lazy" />
+            </div>
+            <div class="category-card__info">
+              <span class="category-card__index label">01</span>
+              <h3 class="category-card__name">Men</h3>
+              <p class="category-card__desc">Oversized silhouettes, heavy jersey, technical outerwear.</p>
+              <span class="category-card__cta">Shop Men <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+          <a href="#shop" class="category-card" data-category-link="women" data-reveal="mask">
+            <div class="category-card__media">
+              <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=1200&auto=format&fit=crop" alt="WOMEN — long coat editorial look" loading="lazy" />
+            </div>
+            <div class="category-card__info">
+              <span class="category-card__index label">02</span>
+              <h3 class="category-card__name">Women</h3>
+              <p class="category-card__desc">Sculptural layers, fluid tailoring, monochrome essentials.</p>
+              <span class="category-card__cta">Shop Women <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+          <a href="#shop" class="category-card" data-category-link="accessories" data-reveal="mask">
+            <div class="category-card__media">
+              <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=1200&auto=format&fit=crop" alt="ACCESSORIES — minimal backpack and objects" loading="lazy" />
+            </div>
+            <div class="category-card__info">
+              <span class="category-card__index label">03</span>
+              <h3 class="category-card__name">Accessories</h3>
+              <p class="category-card__desc">Objects of utility — bags, caps and considered hardware.</p>
+              <span class="category-card__cta">Shop Accessories <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDITORIAL (PINNED) -->
+    <section class="editorial" id="editorial">
+      <div class="editorial__pin" id="editorial-pin">
+        <div class="editorial__bg" aria-hidden="true">
+          <img class="editorial__img is-active" src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1600&auto=format&fit=crop" alt="" loading="lazy" data-look="0" />
+          <img class="editorial__img" src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?q=80&w=1600&auto=format&fit=crop" alt="" loading="lazy" data-look="1" />
+          <img class="editorial__img" src="https://images.unsplash.com/photo-1520975954732-35dd22299614?q=80&w=1600&auto=format&fit=crop" alt="" loading="lazy" data-look="2" />
+        </div>
+        <div class="editorial__veil" aria-hidden="true"></div>
+
+        <div class="editorial__content container">
+          <p class="label" data-editorial-fade>02 — Editorial</p>
+          <h2 class="editorial__title" id="editorial-title">Collection<br />FW26</h2>
+          <div class="editorial__meta">
+            <p class="editorial__look-name" id="editorial-look-name">Look 01 — Monochrome Layering</p>
+            <p class="editorial__look-desc" id="editorial-look-desc">Heavy cotton, structured shoulders and a silhouette that refuses to whisper.</p>
+          </div>
+          <div class="editorial__counter" aria-hidden="true">
+            <span id="editorial-current">01</span>
+            <span class="editorial__counter-line"><span id="editorial-counter-fill"></span></span>
+            <span>03</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOP -->
+    <section class="shop" id="shop">
+      <div class="container">
+        <div class="section-head">
+          <p class="label" data-reveal>03 — Shop</p>
+          <h2 class="section-title" data-split>The Collection</h2>
+        </div>
+
+        <div class="shop__toolbar" data-reveal>
+          <div class="shop__filters" role="group" aria-label="Filter by category">
+            <button class="chip is-active" data-filter-cat="all">All</button>
+            <button class="chip" data-filter-cat="men">Men</button>
+            <button class="chip" data-filter-cat="women">Women</button>
+            <button class="chip" data-filter-cat="accessories">Accessories</button>
+          </div>
+
+          <div class="shop__controls">
+            <label class="shop__price">
+              <span class="label">Max price <output id="price-output">$500</output></span>
+              <input type="range" id="price-range" min="30" max="500" step="10" value="500" aria-label="Maximum price" />
+            </label>
+
+            <label class="shop__sort">
+              <span class="visually-hidden">Sort products</span>
+              <select id="sort-select" aria-label="Sort products">
+                <option value="featured">Featured</option>
+                <option value="price-asc">Price: Low → High</option>
+                <option value="price-desc">Price: High → Low</option>
+                <option value="name">Name A–Z</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="shop__sizes" data-reveal role="group" aria-label="Filter by size">
+          <span class="label">Size</span>
+          <button class="chip chip--size is-active" data-filter-size="all">All</button>
+          <button class="chip chip--size" data-filter-size="S">S</button>
+          <button class="chip chip--size" data-filter-size="M">M</button>
+          <button class="chip chip--size" data-filter-size="L">L</button>
+          <button class="chip chip--size" data-filter-size="XL">XL</button>
+        </div>
+
+        <div class="shop__grid" id="product-grid" aria-live="polite"></div>
+        <p class="shop__empty" id="shop-empty" hidden>Nothing matches your filters. <button class="linklike" id="filters-reset">Reset filters</button></p>
+      </div>
+    </section>
+
+    <!-- PHILOSOPHY -->
+    <section class="philosophy" id="philosophy">
+      <div class="philosophy__bg" aria-hidden="true">
+        <img id="philosophy-img" src="https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?q=80&w=1600&auto=format&fit=crop" alt="" loading="lazy" />
+      </div>
+      <div class="philosophy__content container">
+        <p class="label" data-reveal>04 — Philosophy</p>
+        <blockquote class="philosophy__quote" data-split>
+          We remove everything unnecessary, until only the essential remains.
+        </blockquote>
+        <p class="philosophy__sign label" data-reveal>VOID Studio — Design Notes</p>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter" id="newsletter">
+      <div class="container newsletter__inner">
+        <div class="newsletter__text">
+          <p class="label" data-reveal>05 — Newsletter</p>
+          <h2 class="section-title" data-split>Enter the void</h2>
+          <p class="newsletter__desc" data-reveal>Early access to drops, editorial stories and private archive sales. One email a month — nothing more.</p>
+        </div>
+        <form class="newsletter__form" id="newsletter-form" novalidate data-reveal>
+          <div class="newsletter__field">
+            <label class="visually-hidden" for="newsletter-email">Email address</label>
+            <input type="email" id="newsletter-email" placeholder="YOUR@EMAIL.COM" autocomplete="email" required />
+            <button type="submit" class="btn btn--light" aria-label="Subscribe">
+              <span>Subscribe</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14m0 0-6-6m6 6-6 6"/></svg>
+            </button>
+          </div>
+          <p class="newsletter__error" id="newsletter-error" role="alert" hidden>Please enter a valid email address.</p>
+          <p class="newsletter__ok" id="newsletter-ok" hidden>Welcome to the void. Check your inbox.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================== FOOTER ========================== -->
+  <footer class="footer">
+    <div class="container">
+      <a href="#top" class="footer__logo" data-navlink aria-label="Back to top">VOID</a>
+
+      <div class="footer__grid">
+        <div class="footer__col">
+          <p class="label">Shop</p>
+          <a href="#shop" class="footer__link" data-navlink>All Products</a>
+          <a href="#categories" class="footer__link" data-navlink>Men</a>
+          <a href="#categories" class="footer__link" data-navlink>Women</a>
+          <a href="#categories" class="footer__link" data-navlink>Accessories</a>
+        </div>
+        <div class="footer__col">
+          <p class="label">Company</p>
+          <a href="#philosophy" class="footer__link" data-navlink>About</a>
+          <a href="mailto:studio@void.example" class="footer__link">Contact</a>
+          <a href="#newsletter" class="footer__link" data-navlink>Newsletter</a>
+        </div>
+        <div class="footer__col">
+          <p class="label">Support</p>
+          <a href="#" class="footer__link" data-info="delivery">Delivery</a>
+          <a href="#" class="footer__link" data-info="returns">Returns</a>
+          <a href="#" class="footer__link" data-info="privacy">Privacy Policy</a>
+        </div>
+        <div class="footer__col">
+          <p class="label">Social</p>
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="footer__link">Instagram</a>
+          <a href="https://pinterest.com" target="_blank" rel="noopener" class="footer__link">Pinterest</a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener" class="footer__link">TikTok</a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="label">© 2026 VOID Studio. All rights reserved.</p>
+        <p class="label">Designed in the dark. Worn in the light.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================== CART DRAWER ======================== -->
+  <div class="overlay" id="overlay" aria-hidden="true"></div>
+
+  <aside class="cart" id="cart" aria-hidden="true" role="dialog" aria-label="Shopping cart">
+    <div class="cart__head">
+      <h2 class="cart__title">Cart <span id="cart-head-count" class="label"></span></h2>
+      <button class="cart__close" id="cart-close" aria-label="Close cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l14 14M19 5 5 19"/></svg>
+      </button>
+    </div>
+    <div class="cart__body" id="cart-body"></div>
+    <div class="cart__foot" id="cart-foot">
+      <div class="cart__row"><span class="label">Subtotal</span><span id="cart-subtotal">$0</span></div>
+      <div class="cart__row"><span class="label">Delivery</span><span id="cart-shipping">Free</span></div>
+      <div class="cart__row cart__row--total"><span>Total</span><span id="cart-total">$0</span></div>
+      <button class="btn btn--light btn--full" id="checkout-btn"><span>Checkout</span></button>
+      <p class="label cart__note">Free worldwide delivery on orders over $200</p>
+    </div>
+  </aside>
+
+  <!-- ======================= PRODUCT VIEW ======================= -->
+  <div class="product-view" id="product-view" aria-hidden="true" role="dialog" aria-modal="true"></div>
+
+  <!-- ========================== TOASTS ========================== -->
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <!-- ========================== SCRIPTS ========================== -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" defer></script>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/ui.js" defer></script>
+  <script src="js/router.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
